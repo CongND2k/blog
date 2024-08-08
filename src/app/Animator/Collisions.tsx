@@ -26,12 +26,18 @@ const sketch = (
   };
 
   sketch.draw = () => {
+    sketch.clear();
     // sketch.background(250);
-
-    for (let index = 0; index < particles.length; index++) {
-      particles[index].update();
-      particles[index].edges();
-      particles[index].display();
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = 0; j < particles.length; j++) {
+        const element = particles[j];
+        if (element !== particles[i]) {
+          particles[i].collide(element);
+        }
+      }
+      particles[i].update();
+      particles[i].edges();
+      particles[i].display();
     }
   };
 };
