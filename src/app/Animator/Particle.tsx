@@ -18,7 +18,7 @@ export default class Particle {
     this.r = p5.sqrt(this.mass) * 10;
   }
 
-  applyForce(force: { copy: () => any }) {
+  applyForce(force: Vector) {
     const f = force.copy();
     f.div(this.mass);
     this.acceleration.add(f);
@@ -35,6 +35,36 @@ export default class Particle {
     this.p5.strokeWeight(2);
     this.p5.fill(127);
     this.p5.ellipse(this.position.x, this.position.y, this.r * 2);
+  }
+
+  collide(other: Particle) {
+    const impactVector = Vector.sub(other.position, this.position);
+    let d = impactVector.mag();
+    if (d < this.r + other.r) {
+      // Push the particles out so that they are not overlapping
+      const overlap = d - (this.r + other.r);
+      const dir = impactVector.copy();
+      dir.setMag(overlap * 0.5);
+      this.position.add(dir);
+      other.position.sub(dir);
+
+      // Correct the distance!
+      d = this.r + other.r;
+      impactVector.setMag(d);
+
+      const mSum = this.mass + other.mass;
+      const vDiff = Vector.sub(other.velocity, this.velocity);
+      // Particle A (this)
+      const num = vDiff.dot(impactVector);
+      const den = mSum * d * d;
+      const deltaVA = impactVector.copy();
+      deltaVA.mult((2 * other.mass * num) / den);
+      this.velocity.add(deltaVA);
+      // Particle B (other)
+      const deltaVB = impactVector.copy();
+      deltaVB.mult((-2 * this.mass * num) / den);
+      other.velocity.add(deltaVB);
+    }
   }
 
   edges() {

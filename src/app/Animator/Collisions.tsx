@@ -11,24 +11,28 @@ const sketch = (
   width: number,
   height: number,
 ) => {
-  let particleA: Particle;
-  let particleB: Particle;
+  const particles: Particle[] = [];
 
   sketch.setup = () => {
     sketch.createCanvas(width, height);
-    particleA = new Particle(200, 200, sketch);
-    particleB = new Particle(400, 200, sketch);
+    particles.push(new Particle(200, 200, sketch));
+    particles.push(new Particle(400, 200, sketch));
+    particles.push(new Particle(400, 200, sketch));
+    particles.push(new Particle(400, 200, sketch));
+    particles.push(new Particle(400, 200, sketch));
+    particles.push(new Particle(400, 200, sketch));
+    particles.push(new Particle(400, 200, sketch));
+    particles.push(new Particle(400, 200, sketch));
   };
 
   sketch.draw = () => {
-    sketch.background(250);
-    particleA.update();
-    particleA.edges();
-    particleA.display();
+    // sketch.background(250);
 
-    particleB.update();
-    particleB.edges();
-    particleB.display();
+    for (let index = 0; index < particles.length; index++) {
+      particles[index].update();
+      particles[index].edges();
+      particles[index].display();
+    }
   };
 };
 
