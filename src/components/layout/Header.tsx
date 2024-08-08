@@ -22,15 +22,17 @@ const Header: FC<Props> = ({ handleOpen, handleRemove, openClass }) => {
         <div className="main-header">
           <div className="header-logo">
             <Link className="d-flex" href="/">
-              <img
+              <img 
                 className="logo-night"
                 alt="GenZ"
-                src="/assets/imgs/template/logo.svg"
+                src="/assets/imgs/Logo/Logo_night.png"
+                style={{maxWidth:"65%"}}
               />
-              <img
+              <img 
                 className="d-none logo-day"
                 alt="GenZ"
-                src="/assets/imgs/template/logo-day.svg"
+                src="/assets/imgs/Logo/Logo_light.png"
+                style={{maxWidth:"65%"}}
               />
             </Link>
           </div>
@@ -57,7 +59,7 @@ const Header: FC<Props> = ({ handleOpen, handleRemove, openClass }) => {
                         Blog Category 1
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link className="color-gray-500" href="/blog-archive-2">
                         Blog Category 2
                       </Link>
@@ -76,7 +78,7 @@ const Header: FC<Props> = ({ handleOpen, handleRemove, openClass }) => {
                       <Link className="color-gray-500" href="/blog-archive-5">
                         Blog Category 5
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
                 <li>
@@ -139,11 +141,11 @@ const Header: FC<Props> = ({ handleOpen, handleRemove, openClass }) => {
                 </Link>
               </div>
             </div> */}
-            <Link
+            {/* <Link
               className="btn btn-linear d-none d-sm-inline-block hover-up hover-shadow"
               href="/">
               Login
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

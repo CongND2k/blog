@@ -1,19 +1,43 @@
-import Sidebar2 from '@/components/layout/Sidebar2';
-import EditorPicked from '@/components/sections/EditorPicked';
-import Hero1 from '@/components/sections/Hero1';
-import PopularCategories from '@/components/sections/PopularCategories';
-import RecentPosts from '@/components/sections/RecentPosts';
-import HotTopic from '@/components/slider/HotTopic';
+// 'use client';
+// import React, { useEffect, useRef, useState } from 'react';
+
+import ParentComponent from './Animator/ParentComponent';
 
 export default function Home() {
+  // const containerRef = useRef<HTMLDivElement>(null);
+  // const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+  // useEffect(() => {
+  //   if (containerRef.current) {
+  //     const handleResize = () => {
+  //       setDimensions({
+  //         width: containerRef.current?.offsetWidth || 0,
+  //         height: containerRef.current?.offsetHeight || 0,
+  //       });
+  //     };
+
+  //     handleResize(); // Đặt kích thước ban đầu
+  //     window.addEventListener('resize', handleResize); // Cập nhật khi kích thước cửa sổ thay đổi
+
+  //     return () => {
+  //       window.removeEventListener('resize', handleResize);
+  //     };
+  //   }
+  // }, []);
+
   return (
     <div className="cover-home1">
       <div className="container">
+        <ParentComponent />
         <div className="row">
           <div className="col-xl-1" />
           <div className="col-xl-10 col-lg-12">
             {/* Can choose other option */}
-            <Hero1 />
+            {/* <Collisions
+              width={dimensions.width}
+              height={dimensions.height}></Collisions> */}
+            {/* <Collisions width={800} height={400}></Collisions> */}
+            {/* <Hero1 />
             <HotTopic />
             <EditorPicked />
             <PopularCategories />
@@ -24,7 +48,7 @@ export default function Home() {
               <div className="col-lg-4">
                 <Sidebar2 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

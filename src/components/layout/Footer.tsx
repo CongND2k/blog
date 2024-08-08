@@ -19,10 +19,11 @@ const Footer = () => {
                   <img
                     src={`${
                       !isDarkMode
-                        ? '/assets/imgs/template/logo.svg'
-                        : '/assets/imgs/template/logo-day.svg'
+                        ? '/assets/imgs/Logo/Logo_night.png'
+                        : '/assets/imgs/Logo/Logo_light.png'
                     } `}
                     alt="Phineas"
+                    style={{maxWidth:"55%"}}
                   />
                 </Link>
                 <p className="mb-20 mt-20 text-sm color-gray-500 wow animate__animated animate__fadeInUp">

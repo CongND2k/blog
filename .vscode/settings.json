@@ -19,5 +19,10 @@
   "debug.javascript.autoAttachFilter": "onlyWithFlag",
   "git.mergeEditor": true,
   "merge-conflict.autoNavigateNextConflict.enabled": true,
-  "cSpell.words": ["Pressable"]
+  "cSpell.words": [
+    "Pressable"
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }

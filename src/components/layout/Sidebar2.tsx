@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import data from '@/data/mock/blog-data2';
+import data from '@/data/blog-cong-data';
 
 const Sidebar2 = () => {
   return (

@@ -10,7 +10,7 @@ import PreLoader from '@/components/layout/Preloader';
 import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata = {
-  title: 'Phineas blog',
+  title: 'CongND blog',
   description: 'The best blog app!',
   icons: {
     icon: './favicon.ico',

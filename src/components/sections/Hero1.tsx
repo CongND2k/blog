@@ -1,6 +1,8 @@
 'use client';
 import Typewriter from 'typewriter-effect';
 
+import info from '@/data/cong-info-data';
+
 const Hero1 = () => {
   return (
     <>
@@ -23,11 +25,11 @@ const Hero1 = () => {
             </h1>
             <div className="row">
               <div className="col-lg-9">
+              {info.map((item, index) => (
                 <p className="text-base color-gray-600 wow animate__animated animate__fadeInUp">
-                  Front-End Developer from DaNang. And I am an IT with two years
-                  of experience in application development, website development,
-                  and implementation
-                </p>
+            {item.information}
+          </p>
+      ))}
               </div>
             </div>
           </div>

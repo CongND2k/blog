@@ -5,7 +5,7 @@ import PageHeader1 from '@/components/elements/PageHeader1';
 import Pagination from '@/components/elements/Pagination';
 import Sidebar2 from '@/components/layout/Sidebar2';
 import PopularCategories from '@/components/sections/PopularCategories';
-import data from '@/data/mock/blog-data2';
+import data from '@/data/blog-cong-data';
 
 export default function Archive2() {
   return (
